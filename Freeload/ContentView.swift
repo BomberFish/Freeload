@@ -8,14 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    let appVersion = ((Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "Unknown") + " (" + (Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "Unknown") + ")")
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView {
+            List {
+                Section {
+                    Button(action: {
+                        print("test")
+                    }, label: {
+                        Label("Apply", systemImage: "checkmark.seal")
+                    }
+                    )
+                }
+                Section(header: Text("Freeload " + appVersion + "\nMade with ❤️ by BomberFish")) {}.textCase(nil)
+                    .navigationTitle("Freeload")
+            }
         }
-        .padding()
     }
 }
 
