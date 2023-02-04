@@ -9,21 +9,27 @@ import SwiftUI
 
 struct ContentView: View {
     @State var inProgress = false
+    @State var success = false
     let appVersion = ((Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "Unknown") + " (" + (Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "Unknown") + ")")
     var body: some View {
         NavigationView {
             List {
                 Section {
                     Button(action: {
-                        Haptic.shared.play(.heavy)
                         inProgress = true
-                        let success = patch_installd()
-                        if success {
-                            UIApplication.shared.alert(title: "Success", body: "Successfully patched installd!", withButton: true)
-                            Haptic.shared.notify(.success)
-                        } else {
-                            UIApplication.shared.alert(title: "Failure", body: "Failed to patch installd!", withButton: true)
-                            Haptic.shared.notify(.error)
+                        Haptic.shared.play(.heavy)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                            success = patch_installd()
+                            
+                            if success {
+                                UIApplication.shared.alert(title: "Success", body: "Successfully patched installd!", withButton: true)
+                                Haptic.shared.notify(.success)
+                                inProgress = false
+                            } else {
+                                UIApplication.shared.alert(title: "Failure", body: "Failed to patch installd!", withButton: true)
+                                Haptic.shared.notify(.error)
+                                inProgress = false
+                            }
                         }
                     }, label: {
                         Label("Apply", systemImage: "checkmark.seal")
@@ -33,7 +39,9 @@ struct ContentView: View {
                 Section(header: Text("Freeload " + appVersion + "\nMade with ❤️ by BomberFish\nThanks @zhuowei for the installd patch")) {}.textCase(nil)
                     .navigationTitle("Freeload")
             }
+            .navigationTitle("Freeload")
         }
+        .disabled(inProgress)
     }
 }
 
