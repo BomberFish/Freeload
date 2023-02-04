@@ -14,6 +14,8 @@
 		D6EA8623298EBB63003CADA1 /* FreeloadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EA8622298EBB63003CADA1 /* FreeloadTests.swift */; };
 		D6EA862D298EBB64003CADA1 /* FreeloadUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EA862C298EBB63003CADA1 /* FreeloadUITests.swift */; };
 		D6EA862F298EBB64003CADA1 /* FreeloadUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EA862E298EBB64003CADA1 /* FreeloadUITestsLaunchTests.swift */; };
+		D6EA863E298EBBA0003CADA1 /* Haptic++.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EA863C298EBBA0003CADA1 /* Haptic++.swift */; };
+		D6EA863F298EBBA0003CADA1 /* Alert++.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EA863D298EBBA0003CADA1 /* Alert++.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		D6EA8628298EBB63003CADA1 /* FreeloadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FreeloadUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6EA862C298EBB63003CADA1 /* FreeloadUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeloadUITests.swift; sourceTree = "<group>"; };
 		D6EA862E298EBB64003CADA1 /* FreeloadUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeloadUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D6EA863C298EBBA0003CADA1 /* Haptic++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Haptic++.swift"; sourceTree = "<group>"; };
+		D6EA863D298EBBA0003CADA1 /* Alert++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alert++.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,7 @@
 				D6EA8611298EBB60003CADA1 /* FreeloadApp.swift */,
 				D6EA8613298EBB60003CADA1 /* ContentView.swift */,
 				D6EA8615298EBB63003CADA1 /* Assets.xcassets */,
+				D6EA863B298EBBA0003CADA1 /* Extensions */,
 				D6EA8617298EBB63003CADA1 /* Preview Content */,
 			);
 			path = Freeload;
@@ -125,6 +130,15 @@
 				D6EA862E298EBB64003CADA1 /* FreeloadUITestsLaunchTests.swift */,
 			);
 			path = FreeloadUITests;
+			sourceTree = "<group>";
+		};
+		D6EA863B298EBBA0003CADA1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D6EA863C298EBBA0003CADA1 /* Haptic++.swift */,
+				D6EA863D298EBBA0003CADA1 /* Alert++.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +271,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6EA863E298EBBA0003CADA1 /* Haptic++.swift in Sources */,
 				D6EA8614298EBB60003CADA1 /* ContentView.swift in Sources */,
+				D6EA863F298EBBA0003CADA1 /* Alert++.swift in Sources */,
 				D6EA8612298EBB60003CADA1 /* FreeloadApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
