@@ -17,7 +17,7 @@ struct ContentView: View {
                 Section {
                     Button(action: {
                         inProgress = true
-                        Haptic.shared.play(.heavy)
+                        Haptic.shared.play(.medium)
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                             success = patch_installd()
                             
