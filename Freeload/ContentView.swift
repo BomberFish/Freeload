@@ -15,6 +15,7 @@ struct ContentView: View {
                 Section {
                     Button(action: {
                         print("test")
+                        Haptic.shared.play(.heavy)
                     }, label: {
                         Label("Apply", systemImage: "checkmark.seal")
                     }
