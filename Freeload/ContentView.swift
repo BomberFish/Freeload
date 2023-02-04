@@ -39,7 +39,6 @@ struct ContentView: View {
                 Section(header: Text("Freeload " + appVersion + "\nMade with ❤️ by BomberFish\nThanks @zhuowei for the installd patch")) {}.textCase(nil)
                     .navigationTitle("Freeload")
             }
-            .navigationTitle("Freeload")
         }
         .disabled(inProgress)
     }
